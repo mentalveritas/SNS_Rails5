@@ -3,7 +3,6 @@ sudo: false
 rvm:
   - 2.3.1
 install: bundle install
-script: "bundle exec rake"
 
 before_script:
   - cp config/database.yml.travis config/database.yml
