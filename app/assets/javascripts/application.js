@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require materialize-sprockets
 //= require_tree .
+
+//nav mobile view
+$(document).ready(function() {
+  $(".button-collapse").sideNav();
+});
