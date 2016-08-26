@@ -28,6 +28,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Devise gem(Rails5)
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
+# Use Image upload
+gem 'carrierwave'
+# Use Image resize
+gem 'mini_magick'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
