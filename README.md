@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/mentalveritas/SNS_Rails5.png?label=ready&title=Ready)](https://waffle.io/mentalveritas/SNS_Rails5)
 # SNS 
 
 ## 소개
