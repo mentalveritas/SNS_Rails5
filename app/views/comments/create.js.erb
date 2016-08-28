@@ -1,0 +1,2 @@
+$("#collection_<%= @n_comment.post.id %>").append("<%=j render(partial: 'comments/comment', locals: {post: @n_comment.post, comment: @n_comment})%>");
+$("#comment_<%= @n_comment.id %>").hide().slideDown();
