@@ -1,0 +1,9 @@
+
+  <li class="collection-item" id="comment_<%= comment.id %>">
+    <span class="title"><%= comment.user.name %></span>
+    <span class="right"><%= comment.created_at %></span>
+    <p class="pre-line"><%= comment.content %></p>
+    <% if comment.user.id == current_user.id %>
+      <div><%= link_to "삭제", post_comment_path(post, comment), method: "delete", data: {confirm: "삭제하시겠습니끼?"} %></div>
+    <% end %>
+  </li>

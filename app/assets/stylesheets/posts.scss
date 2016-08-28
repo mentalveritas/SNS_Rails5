@@ -12,7 +12,10 @@
       vertical-align: middle;
     }
     .content {
-      margin: 20px 0;
+      margin: 10px 0;
+      .card-image {
+        margin: 10px 0;
+      }
     }
   }
 }
