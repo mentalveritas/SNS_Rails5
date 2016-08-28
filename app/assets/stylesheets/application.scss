@@ -14,3 +14,16 @@
  *= require_tree .
  *= require_self
  */
+
+.nav-wrapper {
+  .brand-logo {
+    margin: 0 15px;
+  }
+  .right {
+    .thumbnail {
+      vertical-align: middle;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

@@ -1,12 +1,13 @@
 <div class="card post">
   <div class="card-content" id="card_content_<%= post.id %>">
-      <% if post.user.avatar %>
+      <% if post.user.avatar.url %>
         <img class="circle thumbnail" src="<%= post.user.avatar.thumb.url %>" />
+      <% else %>
+        <img class="circle thumbnail" src="http://materializecss.com/images/office.jpg" />
       <% end %>
       <span class="card-title"><%= post.user.name %></span>
-      <span><%= post.created_at %></span>
+      <span><%= post.created_at.strftime("%y/%m/%d %p %H:%M") %></span>
       <div class="content">
-
         <% if user_signed_in? && current_user != post.user %>
           <% if current_user.followings.include?(post.user) %>
             <%= form_tag follow_path(post.user.id), method: :delete, class: "right" do %>
@@ -25,7 +26,6 @@
           <% end %>
         </div>
         <p class="pre-line"><%= post.content %></p>
-
       </div>
   </div>
 

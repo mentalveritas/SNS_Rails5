@@ -1,20 +1,10 @@
 <div class="container">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h3><%= current_user.name %>님 회원정보변경</h3>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="field">
-      <%= f.label :avatar %><br />
-      <div class="card-image">
-        <% if current_user.avatar.url %>
-          <img src ="<%= current_user.avatar.url %>" />
-        <% end %>
-      </div>
-      <%= f.file_field :avatar %>
-    </div>
-
-    <hr />
+    <br />
 
     <div class="field">
       <%= f.label :email %><br />
@@ -26,11 +16,11 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.label :password %> <i>(비밀번호 변경시 입력해 주세요. <em>최소 <%= @minimum_password_length %>자리이상 입력해주세요.</em>)</i><br />
       <%= f.password_field :password, autocomplete: "off" %>
       <% if @minimum_password_length %>
         <br />
-        <em><%= @minimum_password_length %> characters minimum</em>
+
       <% end %>
     </div>
 
@@ -40,7 +30,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.label :current_password %> <i>(회원정보 변경시 현재 비밀번호를 입력해 주세요.)</i><br />
       <%= f.password_field :current_password, autocomplete: "off" %>
     </div>
 
@@ -49,14 +39,27 @@
       <%= f.text_field :name %>
     </div>
 
+    <div class="field">
+      <%= f.label :avatar %><br />
+      <div class="card-image">
+        <% if current_user.avatar.url %>
+          <img src ="<%= current_user.avatar.url %>" />
+        <% end %>
+      </div>
+      <%= f.file_field :avatar %>
+    </div>
+
+    <br />
+
     <div class="actions">
-      <%= f.submit "Update" %>
+      <%= f.submit "회원정보 변경", :class => "btn"%>
     </div>
   <% end %>
 
-  <h3>Cancel my account</h3>
+  <br />
+  <h3>서비스 탈퇴</h3>
 
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  <p>탈퇴하시겠습니까? <%= button_to "회원 탈퇴", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn red" %></p>
 
-  <%= link_to "Back", :back %>
+  <!--<%= link_to "Back", :back, class:"btn" %>-->
 </div>
