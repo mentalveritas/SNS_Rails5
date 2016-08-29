@@ -32,6 +32,8 @@ gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'carrierwave'
 # Use Image resize
 gem 'mini_magick'
+# Use React
+gem 'react-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

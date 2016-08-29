@@ -30,18 +30,16 @@
       <%= f.label :avatar %>
 
       <div class="row">
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image">
-            <img src="http://materializecss.com/images/office.jpg" />
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <%= react_component('ImageUpload') %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col s12 m6">
-        <span class="bottom">
-          <%= f.file_field :avatar, class: "waves-effect waves-red", value: "클릭"%>
-        </span>
-      </div>
+        <div class="col s12 m6">
+          
+        </div>
       </div>
 
     </div>
