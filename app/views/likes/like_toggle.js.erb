@@ -1,0 +1,1 @@
+$("#card_action_<%= @li_post.id %>").html("<%=j render(partial: 'posts/like', locals: {post: @li_post, current_user: @curren_u}) %>");

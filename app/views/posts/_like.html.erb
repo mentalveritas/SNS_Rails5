@@ -1,0 +1,6 @@
+<%= post.likes.size %>명이 좋아합니다.
+<% if current_user.is_like?(post) %>
+  <%= link_to "좋아요 취소", post_like_path(post), method: "post", remote: true %>
+<% else %>
+  <%= link_to "좋아요", post_like_path(post), method: "post", id:"like_chk", remote: true %>
+<% end %>

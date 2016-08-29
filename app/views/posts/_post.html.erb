@@ -29,13 +29,10 @@
       </div>
   </div>
 
-  <div class="card-action" id="card_action_<%= post.id %>">
-      <%= post.likes.size %>명이 좋아합니다.
-      <% if current_user.is_like?(post) %>
-        <%= link_to "좋아요 취소", post_like_path(post), method: "post" %>
-      <% else %>
-        <%= link_to "좋아요", post_like_path(post), method: "post" %>
-      <% end %>
+  <div class="card-action" >
+      <span id="card_action_<%= post.id %>">
+      <%= render partial: "like", locals: {post: post, current_user: current_user} %>
+      </span>
       <% if current_user.id == post.user_id %>
         <%= link_to "삭제", post_path(post.id), method: "delete", class: "right", remote: true, data: {confirm: "삭제하시겠습니까?"} %>
         <%= link_to "수정", edit_post_path(post), class: "right" %>
