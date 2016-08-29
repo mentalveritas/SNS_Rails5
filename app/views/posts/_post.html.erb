@@ -11,21 +11,20 @@
         <% if user_signed_in? && current_user != post.user %>
           <% if current_user.followings.include?(post.user) %>
             <%= form_tag follow_path(post.user.id), method: :delete, class: "right" do %>
-              <button class="btn">팔로우 취소</button>
+              <button class="btn-floating waves-effect waves-light blue"><i class="material-icons">hearing</i></button>
               <% end %>
           <% else %>
             <%= form_tag follows_path, method: :post, class: "right" do %>
               <input type="hidden" name="followed_id" value="<%= post.user.id %>">
-              <button class="btn">팔로우</button>
+              <button class="btn-floating waves-effect waves-light grey"><i class="material-icons">add</i></button>
             <% end %>
           <% end %>
         <% end %>
       </span>
-      <div class="content">
 
+      <div class="content">
         <div class="card-image">
           <% if post.image.url %>
-            <br />
             <img src="<%= post.image.url %>">
           <% end %>
         </div>
