@@ -5,6 +5,7 @@
 
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render partial: "shared/flash_messages", flash: flash %>
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true %>
@@ -23,7 +24,9 @@
     <% end -%>
 
     <div class="actions">
-      <%= f.submit "로그인", :class => "btn-large waves-effect waves-red" %>
+      <button class = "waves-effect waves-red btn-large">
+        <%= f.submit '로그인' %>
+      </button>
       <%= link_to '회원가입', new_user_registration_url, class: "btn-large red darken-1 waves-effect waves-teal right" %>
     </div>
   <% end %>
