@@ -14,7 +14,7 @@ en:
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
+      unauthenticated: "서비스를 계속 이용하시려면 로그인 하시거나 회원가입이 필요합니다."
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
