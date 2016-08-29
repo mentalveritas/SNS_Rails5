@@ -1,7 +1,7 @@
 
   <li class="collection-item" id="comment_<%= comment.id %>">
-    <% if current_user.avatar.url %>
-      <img class="circle thumbnail" src="<%= current_user.avatar.thumb.url %>" />
+    <% if comment.user.avatar.url %>
+      <img class="circle thumbnail" src="<%= comment.user.avatar.thumb.url %>" />
     <% else %>
       <img class="circle thumbnail" src="http://materializecss.com/images/office.jpg" />
     <% end %>
