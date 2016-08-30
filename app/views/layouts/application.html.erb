@@ -42,6 +42,7 @@
           <ul class="side-nav" id="mobile-demo">
 
             <% if user_signed_in? %>
+              <li><%= link_to 'Home', root_path %></li>
               <li><%= link_to '글쓰기', new_post_path, method: "get"%></li>
               <li><%= link_to '회원정보변경', edit_user_registration_path, method:'get' %></li>
               <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
