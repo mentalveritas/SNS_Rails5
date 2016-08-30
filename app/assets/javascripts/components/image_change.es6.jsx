@@ -1,4 +1,4 @@
-class ImageUpload extends React.Component {
+class ImageChange extends React.Component {
 
   constructor(props) {
     super(props);
@@ -28,12 +28,13 @@ class ImageUpload extends React.Component {
   }
 
   render () {
+
     let {imagePreviewUrl} = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
       $imagePreview = (<img src={imagePreviewUrl} />);
     } else {
-      $imagePreview = (<img src="http://materializecss.com/images/office.jpg" className="previewText" />);
+      $imagePreview = (<img src={this.props.abc} className="previewText" />);
     }
 
     return (
@@ -42,6 +43,7 @@ class ImageUpload extends React.Component {
           {$imagePreview}
         </div>
         <br />
+
           <input className="fileInput" type="file" onChange={(e)=>this._handleImageChange(e)} name="user[avatar]" id="user_avatar"/>
       </div>
     );
