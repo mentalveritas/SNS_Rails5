@@ -10,12 +10,11 @@
                     <% end %>
                 </div>
                 <div class="card-content">
-                    <div class="card-title"><%= current_user.name %> 님</div>
+                  <div class="card-title"><%= current_user.name %> 님</div>
                     <p>Email : <%= current_user.email %></p>
                     <p>내글 : <%= @posts_count %> 개</p>
                     <p>팔로워 : <%= current_user.followers.length %> 명</p>
-                    <p>팔로잉 : <%= current_user.followings.size %> 명</p>
-                    
+                    <p>팔로잉 : <span id="following_count"><%= render partial: "follows/count", locals: {current_user: current_user} %></span> 명</p>
                     <%= link_to '글쓰기', new_post_path, method: "get", class: "btn"%>
                 </div>
             </div>

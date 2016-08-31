@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order('created_at desc')
     @posts_count = current_user.posts.length
+    @aa = Post.find_by(id: 1)
   end
 
   def new
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    
+
   end
 
   private

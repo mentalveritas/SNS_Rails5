@@ -1,14 +1,13 @@
-
-  <li class="collection-item" id="comment_<%= comment.id %>">
-    <% if comment.user.avatar.url %>
-      <img class="circle thumbnail" src="<%= comment.user.avatar.thumb.url %>" />
-    <% else %>
-      <img class="circle thumbnail" src="http://materializecss.com/images/office.jpg" />
-    <% end %>
-    <span class="title"><%= comment.user.name %></span>
-    <span class="right"><%= comment.created_at.strftime("%y/%m/%d %p %H:%M") %></span>
-    <p class="pre-line"><%= comment.content %></p>
-    <% if comment.user.id == current_user.id %>
-      <div><%= link_to "삭제", post_comment_path(post, comment), method: "delete", remote: true, data: {confirm: "삭제하시겠습니까?"} %></div>
-    <% end %>
-  </li>
+<li class="collection-item" id="comment_<%= comment.id %>">
+  <% if comment.user.avatar.url %>
+    <img class="circle thumbnail" src="<%= comment.user.avatar.thumb.url %>" />
+  <% else %>
+    <img class="circle thumbnail" src="http://materializecss.com/images/office.jpg" />
+  <% end %>
+  <span class="title"><%= comment.user.name %></span>
+  <span class="right"><%= comment.created_at.strftime("%y/%m/%d %p %H:%M") %></span>
+  <p class="pre-line"><%= comment.content %></p>
+  <% if comment.user.id == current_user.id %>
+    <div><%= link_to "삭제", post_comment_path(post, comment), method: "delete", remote: true, data: {confirm: "삭제하시겠습니까?"} %></div>
+  <% end %>
+</li>
