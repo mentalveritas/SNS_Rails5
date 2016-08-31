@@ -34,8 +34,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 # Use React
 gem 'react-rails'
-# Use es6
-gem 'babel-transpiler'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
