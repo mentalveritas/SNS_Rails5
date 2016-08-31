@@ -1,2 +1,3 @@
 $("#collection_<%= @n_comment.post.id %>").append("<%=j render(partial: 'comments/comment', locals: {post: @n_comment.post, comment: @n_comment})%>");
+$("#comment_input_<%= @n_comment.post_id %> textarea").val('');
 $("#comment_<%= @n_comment.id %>").hide().slideDown();
