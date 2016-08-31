@@ -4,9 +4,9 @@
       <div class="card-content">
         <div class="card-title">새 글 작성하기</div>
         <%= form_tag posts_path, multipart: true do %>
-          <div class="input-field">
-            <%= file_field_tag :image %>
-          </div>
+          <span class="card-image">
+          <%= react_component('PostImageUpload') %>
+          </span>
 
           <div class="input-field">
             <%= text_area_tag :content, nil, class: "materialize-textarea", placeholder: "마음을 전달해 보세요" %>

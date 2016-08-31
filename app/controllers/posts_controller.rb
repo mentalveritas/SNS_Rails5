@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post.image = params[:image]
     @post.content = params[:content]
 
     if @post.save
