@@ -3,7 +3,11 @@
     <div class="card col s12">
       <div class="card-content">
         <div class="card-title">수정하기</div>
-        <%= form_tag post_path(@post), method: "patch" do %>
+
+        <%= form_tag post_path(@post), method: "patch", multipart: true do %>
+          <div class="card-image">
+            <%= react_component('PostImageChange', abc: @post.image.url)%>
+          </div>
           <input type="hidden" name="id" value="<%=@post.id%>">
           <div class="input-field">
             <%= text_area_tag :content, @post.content, class: "materialize-textarea", placeholder: "마음을 전달해 보세요" %>
