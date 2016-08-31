@@ -35,7 +35,9 @@
       <% end %>
       <%= form_tag post_comments_path(post), remote: true do %>
         <div class="input-field">
-          <%= text_area_tag :content, nil, class: "materialize-textarea", placeholder: "댓글을 작성해주세요.", required: true %>
+          <span id="comment_input_<%= post.id %>">
+            <%= text_area_tag :content, nil, class: "materialize-textarea", placeholder: "댓글을 작성해주세요.", required: true %>
+          </span>
         </div>
         <div class="input-field">
           <%= button_tag "댓글 쓰기", class: "btn" %>
