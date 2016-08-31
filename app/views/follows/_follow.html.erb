@@ -1,0 +1,11 @@
+<% if current_user.followings.include?(post.user) %>
+  <%= form_tag follow_path(post.user.id), method: :delete, class: "right", remote: true do %>
+    <button class="btn-floating waves-effect waves-light blue"><i class="material-icons">hearing</i></button>
+  <% end %>
+<% else %>
+  <%= form_tag follows_path, method: :post, class: "right", remote: true do %>
+    
+    <input type="hidden" name="followed_id" value="<%= post.user.id %>">
+    <button class="btn-floating waves-effect waves-light grey"><i class="material-icons">add</i></button>
+  <% end %>
+<% end %>

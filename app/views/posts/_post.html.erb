@@ -9,16 +9,9 @@
       <span><%= post.created_at.strftime("%y/%m/%d %p %H:%M") %></span>
       <span>
         <% if user_signed_in? && current_user != post.user %>
-          <% if current_user.followings.include?(post.user) %>
-            <%= form_tag follow_path(post.user.id), method: :delete, class: "right" do %>
-              <button class="btn-floating waves-effect waves-light blue"><i class="material-icons">hearing</i></button>
-              <% end %>
-          <% else %>
-            <%= form_tag follows_path, method: :post, class: "right" do %>
-              <input type="hidden" name="followed_id" value="<%= post.user.id %>">
-              <button class="btn-floating waves-effect waves-light grey"><i class="material-icons">add</i></button>
-            <% end %>
-          <% end %>
+          <span class="follow_<%= post.user_id %>">
+            <%= render partial: "follows/follow", locals: {post: post, current_user: current_user} %>
+          </span>
         <% end %>
       </span>
 
@@ -34,7 +27,7 @@
 
   <div class="card-action" >
       <span id="card_action_<%= post.id %>">
-      <%= render partial: "like", locals: {post: post, current_user: current_user} %>
+        <%= render partial: "like", locals: {post: post, current_user: current_user} %>
       </span>
       <% if current_user.id == post.user_id %>
         <%= link_to "삭제", post_path(post.id), method: "delete", class: "right", remote: true, data: {confirm: "삭제하시겠습니까?"} %>
@@ -49,7 +42,6 @@
         </div>
       <% end %>
 
-
         <ul class="collection" id="collection_<%= post.id%>">
           <% if post.comments.present? %>
             <% post.comments.each do |comment| %>
@@ -57,8 +49,5 @@
             <% end %>
           <% end %>
         </ul>
-
-
-
   </div>
 </div>

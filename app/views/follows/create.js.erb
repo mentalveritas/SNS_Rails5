@@ -1,0 +1,2 @@
+$("#following_count").html("<%=j render(partial: 'count', locals: {current_user: @current_u}) %>");
+$(".follow_<%= @post_user_id %>").html("<%=j render(partial: 'follow', locals: {post: @post_create, current_user: @current_u}) %>");
