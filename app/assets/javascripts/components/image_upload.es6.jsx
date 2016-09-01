@@ -33,7 +33,7 @@ class ImageUpload extends React.Component {
     if (imagePreviewUrl) {
       $imagePreview = (<img src={imagePreviewUrl} />);
     } else {
-      $imagePreview = (<img src="http://materializecss.com/images/office.jpg" className="previewText" />);
+      $imagePreview = (<img src="https://s3.ap-northeast-2.amazonaws.com/sns-rails5-image/uploads/upload.png" className="previewText" />);
     }
 
     return (

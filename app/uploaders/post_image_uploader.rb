@@ -28,7 +28,7 @@ class PostImageUploader < CarrierWave::Uploader::Base
   # process :scale => [200, 300]
 
   # Resize process (fit/limit)
-  process :resize_to_fit => [1024, 768]
+  process :resize_to_limit => [1024, 768]
   #
   # def scale(width, height)
   #   # do something
