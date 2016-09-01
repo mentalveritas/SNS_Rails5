@@ -34,6 +34,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 # Use React
 gem 'react-rails'
+# Use AWS S3
+gem 'carrierwave-aws'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
