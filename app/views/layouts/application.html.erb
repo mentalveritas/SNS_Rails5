@@ -32,7 +32,7 @@
                 <% end %>
               </li>
               <li><%= link_to current_user.name, edit_user_registration_path, method:'get' %></li>
-              <li><a class="modal-trigger" href="#modal1">글쓰기</a></li>
+              <li><%= link_to 'Home', root_path %></li>
               <li><%= link_to '프로필수정', edit_user_registration_path, method:'get' %></li>
               <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
             <% else %>
