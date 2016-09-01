@@ -6,6 +6,28 @@
   white-space: pre-line;
 }
 
+#modal1 {
+  .card-content {
+    .container {
+      .row {
+        .card {
+          .card-image {
+            .previewComponent {
+              .imgPreview {
+                max-width: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal {width: 50% !important; max-height: 100% !important;}
+
+
+
 .post {
   .card-content {
     .thumbnail {

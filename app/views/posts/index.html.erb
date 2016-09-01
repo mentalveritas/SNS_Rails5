@@ -15,7 +15,7 @@
                     <p>내글 : <%= @posts_count %> 개</p>
                     <p>팔로워 : <%= current_user.followers.length %> 명</p>
                     <p>팔로잉 : <span id="following_count"><%= render partial: "follows/count", locals: {current_user: current_user} %></span> 명</p>
-                    <%= link_to '글쓰기', new_post_path, method: "get", class: "btn"%>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">글쓰기</a>
                 </div>
             </div>
         </div>
@@ -26,3 +26,39 @@
         </div>
     </div>
 </div>
+
+<div id="modal1" class="modal">
+  <br />
+  <div class="card-content">
+    <div class="container">
+      <div class="row">
+        <div class="card col s12">
+          <div class="card-title">새 글 작성하기</div>
+          <%= form_tag posts_path, multipart: true do %>
+            <span class="card-image">
+              <%= react_component('PostImageUpload') %>
+            </span>
+
+            <div class="input-field">
+              <%= text_area_tag :content, nil, class: "materialize-textarea", placeholder: "마음을 전달해 보세요" %>
+            </div>
+
+            <div class="input-field">
+              <%= button_tag "작성하기", class: "btn" %>
+              <br /><br />
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger').leanModal({
+    ending_top: '10%'
+  });
+});
+</script>
