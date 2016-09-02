@@ -9,9 +9,10 @@ SNS형태의 글/댓글 작성 및 좋아요/Follow, 이미지 업로드 기능�
 - Rails : 5.0.0.1
 - React : 15.3.0
 - Database : Dev-> sqlite3, Prod -> postgresql
+- Image storage : AWS S3
 - CI : Travis-CI
 - Deploy : Heroku
-- Additional Gems : devise, react-rails, carrierwave, mini_magick, materialize-sass, dotenv
+- Additional Gems : devise, react-rails, carrierwave, carrierwave-aws, mini_magick, materialize-sass, dotenv
 
 ## 기능
 - 게시물/댓글 CRUD
