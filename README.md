@@ -11,7 +11,7 @@ SNS형태의 글/댓글 작성 및 좋아요/Follow, 이미지 업로드 기능�
 - Database : Dev-> sqlite3, Prod -> postgresql
 - CI : Travis-CI
 - Deploy : Heroku
-- Additional Gems : devise, react-rails, carrierwave, mini_magick, materialize-sass
+- Additional Gems : devise, react-rails, carrierwave, mini_magick, materialize-sass, dotenv
 
 ## 기능
 - 게시물/댓글 CRUD
